@@ -1,34 +1,38 @@
 {
-  "name": "fastify-templete",
-  "version": "0.1.0",
-  "description": "Production ready Fastify TypeScript template",
-  "author": "viral mistry",
-  "type": "module",
-  "main": "dist/server.js",
-  "scripts": {
-    "dev": "tsx watch --clear-screen=false src/server.ts",
-    "build": "tsdown",
-    "start": "node dist/server.js",
-    "typecheck": "tsc -p tsconfig.json --noEmit",
-    "lint": "oxlint",
-    "lint:fix": "oxlint --fix",
-    "fmt": "oxfmt src *.config.ts",
-    "fmt:check": "oxfmt --check src *.config.ts",
-    "test": "echo \"TODO: node --import tsx --test\"",
-    "test:watch": "echo \"TODO: node --import tsx --test --watch\"",
-    "check": "bun run fmt:check && bun run lint && bun run typecheck"
-  },
-  "dependencies": {},
-  "devDependencies": {
-    "@types/node": "26.6.5",
-    "oxfmt": "0.73.0",
-    "oxlint": "1.88.0",
-    "tsdown": "0.23.1",
-    "tsx": "4.23.15",
-    "typescript": "7.0.2"
-  },
-  "engines": {
-    "node": ">=22.0.0"
-  },
-  "packageManager": "bun@1.2.23"
+    "name": "fastify-templete",
+    "version": "0.1.0",
+    "description": "Production ready Fastify TypeScript template",
+    "author": "viral mistry",
+    "type": "module",
+    "main": "dist/server.js",
+    "scripts": {
+        "prepare": "lefthook install",
+        "dev": "tsx watch --clear-screen=false src/server.ts",
+        "build": "tsdown",
+        "start": "node dist/server.js",
+        "typecheck": "tsc -p tsconfig.json --noEmit",
+        "lint": "oxlint",
+        "lint:fix": "oxlint --fix",
+        "fmt": "oxfmt src *.config.ts",
+        "fmt:check": "oxfmt --check src *.config.ts",
+        "test": "echo \"TODO: node --import tsx --test\"",
+        "test:watch": "echo \"TODO: node --import tsx --test --watch\"",
+        "check": "bun run fmt:check && bun run lint && bun run typecheck"
+    },
+    "dependencies": {},
+    "devDependencies": {
+        "@commitlint/cli": "21.2.3",
+        "@commitlint/config-conventional": "21.2.3",
+        "@types/node": "26.6.5",
+        "lefthook": "2.2.2",
+        "oxfmt": "0.73.0",
+        "oxlint": "1.88.0",
+        "tsdown": "0.23.1",
+        "tsx": "4.23.15",
+        "typescript": "7.0.2"
+    },
+    "engines": {
+        "node": ">=22.0.0"
+    },
+    "packageManager": "bun@1.2.23"
 }
