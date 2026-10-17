@@ -2,13 +2,9 @@
   "name": "fastify-templete",
   "version": "0.1.0",
   "description": "Production ready Fastify TypeScript template",
-  "type": "module",
   "author": "viral mistry",
+  "type": "module",
   "main": "dist/server.js",
-  "packageManager": "bun@1.2.23",
-  "engines": {
-    "node": ">=22.0.0"
-  },
   "scripts": {
     "dev": "tsx watch --clear-screen=false src/server.ts",
     "build": "tsdown",
@@ -16,18 +12,23 @@
     "typecheck": "tsc -p tsconfig.json --noEmit",
     "lint": "oxlint",
     "lint:fix": "oxlint --fix",
-    "format": "echo \"TODO: oxfmt .\"",
-    "format:check": "echo \"TODO: oxfmt --check .\"",
+    "fmt": "oxfmt src *.config.ts",
+    "fmt:check": "oxfmt --check src *.config.ts",
     "test": "echo \"TODO: node --import tsx --test\"",
     "test:watch": "echo \"TODO: node --import tsx --test --watch\"",
-    "check": "echo \"TODO: format:check && lint && typecheck && test\""
+    "check": "bun run fmt:check && bun run lint && bun run typecheck"
   },
   "dependencies": {},
   "devDependencies": {
     "@types/node": "26.6.5",
+    "oxfmt": "0.73.0",
     "oxlint": "1.88.0",
     "tsdown": "0.23.1",
     "tsx": "4.23.15",
     "typescript": "7.0.2"
-  }
+  },
+  "engines": {
+    "node": ">=22.0.0"
+  },
+  "packageManager": "bun@1.2.23"
 }

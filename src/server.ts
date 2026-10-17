@@ -1,3 +1,3 @@
-import { greet } from '@common/temp';
+import { greet } from "@common/temp";
 
-console.log(greet('fastify'));
+console.log(greet("fastify"));
