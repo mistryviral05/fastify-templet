@@ -43,7 +43,8 @@
         "unicorn/no-null": "off",
         "unicorn/filename-case": "off",
         "unicorn/no-array-reduce": "off",
-        "typescript/no-extraneous-class": "off"
+        "typescript/no-extraneous-class": "off",
+        "max-classes-per-file": "off"
     },
 
     "ignorePatterns": ["dist/**", "node_modules/**", "coverage/**", "*.config.js", ".bun/**"],
@@ -63,6 +64,12 @@
             "files": ["*.config.ts", "tsdown.config.ts"],
             "rules": {
                 "import/no-default-export": "off"
+            }
+        },
+        {
+            "files": ["src/common/http/errors.ts"],
+            "rules": {
+                "max-classes-per-file": "off"
             }
         }
     ]
