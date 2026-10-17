@@ -14,8 +14,8 @@
     "build": "tsdown",
     "start": "node dist/server.js",
     "typecheck": "tsc -p tsconfig.json --noEmit",
-    "lint": "echo \"TODO: oxlint .\"",
-    "lint:fix": "echo \"TODO: oxlint . --fix\"",
+    "lint": "oxlint",
+    "lint:fix": "oxlint --fix",
     "format": "echo \"TODO: oxfmt .\"",
     "format:check": "echo \"TODO: oxfmt --check .\"",
     "test": "echo \"TODO: node --import tsx --test\"",
@@ -25,6 +25,7 @@
   "dependencies": {},
   "devDependencies": {
     "@types/node": "26.6.5",
+    "oxlint": "1.88.0",
     "tsdown": "0.23.1",
     "tsx": "4.23.15",
     "typescript": "7.0.2"

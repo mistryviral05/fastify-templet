@@ -1,0 +1,65 @@
+{
+    "$schema": "./node_modules/oxlint/configuration_schema.json",
+    "plugins": ["typescript", "import", "unicorn", "promise", "node", "oxc"],
+    "env": {
+        "node": true,
+        "es2023": true
+    },
+    "categories": {
+        "correctness": "error",
+        "suspicious": "warn",
+        "pedantic": "warn",
+        "perf": "warn",
+        "style": "off",
+        "restriction": "off",
+        "nursery": "off"
+    },
+    "rules": {
+        "no-console": "warn",
+        "no-debugger": "error",
+        "no-var": "error",
+        "prefer-const": "error",
+        "eqeqeq": ["error", "always"],
+        "no-unused-vars": "error",
+
+        "typescript/no-explicit-any": "error",
+        "typescript/no-non-null-assertion": "error",
+        "typescript/consistent-type-imports": "error",
+        "typescript/explicit-function-return-type": "off",
+
+        "import/no-duplicates": "error",
+        "import/no-self-import": "error",
+        "import/no-cycle": "error",
+        "import/first": "error",
+
+        "promise/no-return-wrap": "error",
+        "promise/param-names": "error",
+        "promise/prefer-await-to-then": "warn",
+
+        "node/no-exports-assign": "error",
+
+        "unicorn/prefer-node-protocol": "error",
+        "unicorn/no-null": "off",
+        "unicorn/filename-case": "off",
+        "unicorn/no-array-reduce": "off"
+    },
+
+    "ignorePatterns": ["dist/**", "node_modules/**", "coverage/**", "*.config.js", ".bun/**"],
+    "overrides": [
+        {
+            "files": ["**/*.spec.ts", "**/*.test.ts", "tests/**/*.ts"],
+            "rules": {
+                "no-console": "off",
+                "typescript/no-explicit-any": "off",
+                "typescript/no-non-null-assertion": "off",
+                "unicorn/no-useless-undefined": "off"
+            }
+        },
+        {
+            "files": ["*.config.ts", "tsdown.config.ts"],
+            "rules": {
+                "import/no-default-export": "off"
+            }
+        }
+    ]
+}
