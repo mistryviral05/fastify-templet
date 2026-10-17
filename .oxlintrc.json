@@ -42,7 +42,8 @@
         "unicorn/prefer-node-protocol": "error",
         "unicorn/no-null": "off",
         "unicorn/filename-case": "off",
-        "unicorn/no-array-reduce": "off"
+        "unicorn/no-array-reduce": "off",
+        "typescript/no-extraneous-class": "off"
     },
 
     "ignorePatterns": ["dist/**", "node_modules/**", "coverage/**", "*.config.js", ".bun/**"],

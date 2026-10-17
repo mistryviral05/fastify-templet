@@ -18,6 +18,7 @@ const _config = {
         .split(",")
         .map((origin) => origin.trim())
         .filter(Boolean),
+    host: required("HOST"),
 };
 
 const config = Object.freeze(_config);
