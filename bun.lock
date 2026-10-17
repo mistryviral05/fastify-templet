@@ -11,6 +11,7 @@
         "fastify": "5.12.7",
         "fastify-plugin": "6.0.1",
         "http-status-codes": "2.3.0",
+        "pino": "10.4.0",
       },
       "devDependencies": {
         "@commitlint/cli": "21.2.3",

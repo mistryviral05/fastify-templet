@@ -1,0 +1,36 @@
+name: fastify-templete-dev
+
+services:
+    api:
+        build:
+            context: ..
+            dockerfile: docker/Dockerfile.dev
+            target: development
+            args:
+                PORT: ${PORT:-5500}
+        image: fastify-templete:dev
+        container_name: fastify-templete-dev
+        restart: unless-stopped
+        init: true
+        env_file:
+            - ../.env.dev
+        environment:
+            NODE_ENV: development
+            HOST: 0.0.0.0
+        ports:
+            - "${PORT:-5500}:${PORT:-5500}"
+        volumes:
+            - ../src:/app/src
+            - ../tsconfig.json:/app/tsconfig.json:ro
+            - ../tsconfig.build.json:/app/tsconfig.build.json:ro
+            - ../package.json:/app/package.json:ro
+            - node_modules:/app/node_modules
+        stop_grace_period: 10s
+        logging:
+            driver: json-file
+            options:
+                max-size: 10m
+                max-file: "3"
+
+volumes:
+    node_modules:

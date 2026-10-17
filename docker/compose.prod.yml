@@ -1,0 +1,51 @@
+name: fastify-templete
+
+services:
+    api:
+        build:
+            context: ..
+            dockerfile: docker/Dockerfile
+            target: runtime
+            args:
+                PORT: ${PORT:-5500}
+        image: fastify-templete:latest
+        container_name: fastify-templete
+        restart: unless-stopped
+        init: true
+        env_file:
+            - ../.env.prod
+        environment:
+            NODE_ENV: production
+            HOST: 0.0.0.0
+        ports:
+            - "${PORT:-5500}:${PORT:-5500}"
+        read_only: true
+        tmpfs:
+            - /tmp
+        security_opt:
+            - no-new-privileges:true
+        cap_drop:
+            - ALL
+        stop_grace_period: 15s
+        healthcheck:
+            test:
+                - CMD
+                - node
+                - -e
+                - fetch('http://127.0.0.1:'+process.env.PORT+'/health').then((response)=>process.exit(response.ok?0:1)).catch(()=>process.exit(1))
+            interval: 30s
+            timeout: 3s
+            start_period: 10s
+            retries: 3
+        logging:
+            driver: json-file
+            options:
+                max-size: 10m
+                max-file: "3"
+        deploy:
+            resources:
+                limits:
+                    cpus: "1.0"
+                    memory: 512M
+                reservations:
+                    memory: 256M
