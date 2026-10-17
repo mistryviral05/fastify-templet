@@ -5,8 +5,11 @@ import { PluginRegister } from "@/bootstrap/register-plugins";
 
 export const bootstrap = async (app: FastifyInstance): Promise<void> => {
     await PluginRegister.register(app);
-    HooksRegister.register(app);
-    // app.get("/health", () => ({ status: "ok" }));
+    await HooksRegister.register(app);
+    app.get("/health", (request, reply) => {
+        request.log.info("Health check endpoint called");
+        reply.send({ status: "ok" });
+    });
     await app.ready();
 };
 
