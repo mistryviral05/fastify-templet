@@ -11,6 +11,7 @@ export class ServerFactory {
             loggerInstance: logger,
             genReqId: () => randomUUID(),
             requestIdHeader: "x-request-id",
+            trustProxy: true,
         });
         app.decorate("config", appConfig);
         return app;

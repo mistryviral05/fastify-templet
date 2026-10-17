@@ -1,0 +1,28 @@
+services:
+    nginx:
+        image: nginx:1.29-alpine
+        container_name: fastify-templete-nginx
+        restart: unless-stopped
+        init: true
+        depends_on:
+            - api
+        ports:
+            - "${NGINX_PORT:-80}:80"
+        volumes:
+            - ../nginx/nginx.conf:/etc/nginx/nginx.conf:ro
+            - ../nginx/conf.d:/etc/nginx/conf.d:ro
+        healthcheck:
+            test:
+                - CMD
+                - nginx
+                - -t
+            interval: 30s
+            timeout: 5s
+            start_period: 5s
+            retries: 3
+        stop_grace_period: 10s
+        logging:
+            driver: json-file
+            options:
+                max-size: 10m
+                max-file: "3"
