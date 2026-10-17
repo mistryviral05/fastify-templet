@@ -1,0 +1,28 @@
+{
+  "name": "fastify-templete",
+  "version": "0.1.0",
+  "description": "Production ready Fastify TypeScript template",
+  "type": "module",
+  "author": "viral mistry",
+  "main": "dist/server.js",
+  "packageManager": "bun@1.2.23",
+  "engines": {
+    "node": ">=22.0.0"
+  },
+  "scripts": {
+    "dev": "echo \"TODO: tsx watch src/server.ts\"",
+    "build": "echo \"TODO: tsdown\"",
+    "start": "echo \"TODO: node dist/server.js\"",
+    "typecheck": "echo \"TODO: tsc -p tsconfig.json --noEmit\"",
+    "lint": "echo \"TODO: oxlint .\"",
+    "lint:fix": "echo \"TODO: oxlint . --fix\"",
+    "format": "echo \"TODO: oxfmt .\"",
+    "format:check": "echo \"TODO: oxfmt --check .\"",
+    "test": "echo \"TODO: node --import tsx --test\"",
+    "test:watch": "echo \"TODO: node --import tsx --test --watch\"",
+    "check": "echo \"TODO: format:check && lint && typecheck && test\""
+  },
+  "dependencies": {},
+  "devDependencies": {}
+}
+
