@@ -1,1 +1,0 @@
-console.log("Hello, TypeScript 7.2!");

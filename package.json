@@ -10,9 +10,9 @@
     "node": ">=22.0.0"
   },
   "scripts": {
-    "dev": "echo \"TODO: tsx watch src/server.ts\"",
-    "build": "echo \"TODO: tsdown\"",
-    "start": "echo \"TODO: node dist/server.js\"",
+    "dev": "tsx watch --clear-screen=false src/server.ts",
+    "build": "tsdown",
+    "start": "node dist/server.js",
     "typecheck": "tsc -p tsconfig.json --noEmit",
     "lint": "echo \"TODO: oxlint .\"",
     "lint:fix": "echo \"TODO: oxlint . --fix\"",
@@ -25,6 +25,8 @@
   "dependencies": {},
   "devDependencies": {
     "@types/node": "26.6.5",
+    "tsdown": "0.23.1",
+    "tsx": "4.23.15",
     "typescript": "7.0.2"
   }
 }
