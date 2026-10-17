@@ -6,7 +6,7 @@ import { PluginRegister } from "@/bootstrap/register-plugins";
 export const bootstrap = async (app: FastifyInstance): Promise<void> => {
     await PluginRegister.register(app);
     HooksRegister.register(app);
-    app.get("/health", () => ({ status: "ok" }));
+    // app.get("/health", () => ({ status: "ok" }));
     await app.ready();
 };
 

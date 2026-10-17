@@ -21,7 +21,8 @@ export default {
         ],
         "type-empty": [2, "never"],
         "subject-empty": [2, "never"],
-        "subject-case": [2, "always", "lower-case"],
+        /* Off, so identifiers like HooksRegister can appear in a subject */
+        "subject-case": [0],
         "subject-full-stop": [2, "never", "."],
         "header-max-length": [2, "always", 100],
         "body-leading-blank": [2, "always"],
