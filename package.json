@@ -13,7 +13,7 @@
     "dev": "echo \"TODO: tsx watch src/server.ts\"",
     "build": "echo \"TODO: tsdown\"",
     "start": "echo \"TODO: node dist/server.js\"",
-    "typecheck": "echo \"TODO: tsc -p tsconfig.json --noEmit\"",
+    "typecheck": "tsc -p tsconfig.json --noEmit",
     "lint": "echo \"TODO: oxlint .\"",
     "lint:fix": "echo \"TODO: oxlint . --fix\"",
     "format": "echo \"TODO: oxfmt .\"",
@@ -23,6 +23,8 @@
     "check": "echo \"TODO: format:check && lint && typecheck && test\""
   },
   "dependencies": {},
-  "devDependencies": {}
+  "devDependencies": {
+    "@types/node": "26.6.5",
+    "typescript": "7.0.2"
+  }
 }
-

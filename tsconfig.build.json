@@ -1,0 +1,25 @@
+{
+    "$schema": "https://json.schemastore.org/tsconfig",
+    "extends": "./tsconfig.json",
+    "compilerOptions": {
+        "noEmit": false,
+        "rootDir": "src",
+        "outDir": "dist",
+        "sourceMap": true,
+        "declaration": false,
+        "declarationMap": false,
+        "removeComments": true,
+        "stripInternal": true
+    },
+    "include": ["src/**/*.ts"],
+    "exclude": [
+        "node_modules",
+        "dist",
+        "coverage",
+        "tests",
+        "src/**/*.spec.ts",
+        "src/**/*.test.ts",
+        "**/__mocks__/**",
+        "**/__fixtures__/**"
+    ]
+}
